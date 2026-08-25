@@ -43,7 +43,7 @@ export const SiteNavigationA = ({
           <NavigationMenu viewport={false}>
             <NavigationMenuList>
               {navigationItems.map((item) => (
-                <NavigationMenuItem key={item.href}>
+                <NavigationMenuItem key={item.label}>
                   <NavigationMenuLink
                     href={item.href}
                     className={cn(navigationMenuTriggerStyle(), 'bg-transparent')}

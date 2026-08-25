@@ -5,17 +5,20 @@ import { tanstackStart } from '@tanstack/react-start/plugin/vite'
 
 import viteReact from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
-import { nitro } from 'nitro/vite'
 
-const config = defineConfig({
+const base = process.env.VITE_BASE_PATH ?? '/workshop-code/'
+
+export default defineConfig({
+  base,
   resolve: { tsconfigPaths: true },
   plugins: [
     devtools(),
-    nitro({ rollupConfig: { external: [/^@sentry\//] } }),
     tailwindcss(),
-    tanstackStart(),
+    tanstackStart({
+      router: { basepath: base.replace(/^\/|\/$/g, '') },
+      spa: { enabled: true },
+      prerender: { enabled: true, crawlLinks: true, failOnError: true, concurrency: 4 },
+    }),
     viteReact(),
   ],
 })
-
-export default config
