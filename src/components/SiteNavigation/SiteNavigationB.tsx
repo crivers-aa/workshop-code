@@ -1,4 +1,5 @@
 import { Children, type ReactNode } from 'react'
+import { Shell } from 'lucide-react'
 
 import { Button } from '#/components/ui/button'
 import {
@@ -35,9 +36,17 @@ function Navigation({ children }: { children?: ReactNode }) {
 
 function Logo({ children }: { children?: ReactNode }) {
   return (
-    <span className="text-lg font-semibold tracking-tight">
-      {children ?? 'Acme'}
-    </span>
+    <a
+      href="#"
+      className="group flex items-center gap-2.5 rounded-lg outline-none ring-offset-background focus-visible:ring-2 focus-visible:ring-ring"
+    >
+      <span className="flex size-9 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-sm transition-transform group-hover:scale-105">
+        <Shell className="size-5" strokeWidth={2.25} />
+      </span>
+      <span className="text-lg font-semibold tracking-tight">
+        {children ?? 'My Site'}
+      </span>
+    </a>
   )
 }
 
