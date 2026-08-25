@@ -2,7 +2,7 @@
   "projectName": "workshop-code",
   "mode": "file-router",
   "typescript": true,
-  "packageManager": "npm",
+  "packageManager": "yarn",
   "includeExamples": false,
   "tailwind": true,
   "projectPreset": "default",
