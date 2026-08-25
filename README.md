@@ -2,7 +2,7 @@
 
 A collection of React component pattern examples.
 
-**Live demo:** [username.github.io/workshop-code](https://username.github.io/workshop-code/) *(replace `username` with your GitHub username)*
+**Live demo:** [crivers-aa.github.io/workshop-code](https://crivers-aa.github.io/workshop-code/) 
 
 ## Quick start
 
