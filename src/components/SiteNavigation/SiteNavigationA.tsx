@@ -13,14 +13,17 @@ import { cn } from '#/lib/utils'
 type SiteNavigationAProps = {
   showLogo?: boolean
   navigationItems?: { label: string; href: string }[]
-  showSignInButton?: boolean
+  signin?: {
+    show: boolean
+    onclick: () => void
+  }
 }
 
-export function SiteNavigationA({
+export const SiteNavigationA = ({
   showLogo = false,
   navigationItems = [],
-  showSignInButton = false,
-}: SiteNavigationAProps) {
+  signin,
+}: SiteNavigationAProps) => {
   return (
     <header className="border-b bg-background px-4 py-3">
       <nav className="flex items-center gap-6">
@@ -53,8 +56,8 @@ export function SiteNavigationA({
           </NavigationMenu>
         )}
 
-        {showSignInButton && (
-          <Button className="ml-auto" size="sm">
+        {signin?.show && (
+          <Button className="ml-auto" size="sm" onClick={signin.onclick}>
             Sign in
           </Button>
         )}

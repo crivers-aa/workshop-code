@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { BrowserWindow } from "#/components/BrowserWindow";
-import { SiteNavigationAExample } from "#/components/SiteNavigation/SiteNavigationAExample";
-import { SiteNavigationBExample } from "#/components/SiteNavigation/SiteNavigationBExample";
+import { SiteNavigationAUsage } from "#/components/SiteNavigation/SiteNavigationA.usage";
+import { SiteNavigationBUsage } from "#/components/SiteNavigation/SiteNavigationB.usage";
 
 export const Route = createFileRoute("/")({ component: Home });
 
@@ -25,14 +25,14 @@ function Home() {
       <section className="space-y-4">
         <Header badge="A" title="Props-based" />
         <BrowserWindow url="mysite.com">
-          <SiteNavigationAExample />
+          <SiteNavigationAUsage />
         </BrowserWindow>
       </section>
 
       <section className="space-y-4">
         <Header badge="B" title="Compound" />
         <BrowserWindow url="mysite.com">
-          <SiteNavigationBExample />
+          <SiteNavigationBUsage />
         </BrowserWindow>
       </section>
     </div>

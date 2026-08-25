@@ -6,7 +6,7 @@ import {
   SignInButton,
 } from '#/components/SiteNavigation/SiteNavigationB'
 
-export function SiteNavigationBExample() {
+export const SiteNavigationBUsage = () => {
   return (
     <Navigation>
       <Logo />
@@ -15,7 +15,7 @@ export function SiteNavigationBExample() {
         <NavigationItem href="#">About</NavigationItem>
         <NavigationItem href="#">Contact</NavigationItem>
       </NavigationItems>
-      <SignInButton />
+      <SignInButton onClick={() => alert('Handle sign in')} />
     </Navigation>
   )
 }

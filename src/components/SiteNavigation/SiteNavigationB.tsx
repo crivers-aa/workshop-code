@@ -1,4 +1,4 @@
-import { Children, type ReactNode } from 'react'
+import { Children, type ComponentProps, type ReactNode } from 'react'
 import { Shell } from 'lucide-react'
 
 import { Button } from '#/components/ui/button'
@@ -11,7 +11,7 @@ import {
 } from '#/components/ui/navigation-menu'
 import { cn } from '#/lib/utils'
 
-function Navigation({ children }: { children?: ReactNode }) {
+export const Navigation = ({ children }: { children?: ReactNode }) => {
   const hasChildren = Children.count(children) > 0
 
   return (
@@ -34,7 +34,7 @@ function Navigation({ children }: { children?: ReactNode }) {
   )
 }
 
-function Logo({ children }: { children?: ReactNode }) {
+export const Logo = ({ children }: { children?: ReactNode }) => {
   return (
     <a
       href="#"
@@ -50,7 +50,7 @@ function Logo({ children }: { children?: ReactNode }) {
   )
 }
 
-function NavigationItems({ children }: { children?: ReactNode }) {
+export const NavigationItems = ({ children }: { children?: ReactNode }) => {
   return (
     <NavigationMenu viewport={false}>
       <NavigationMenuList>{children}</NavigationMenuList>
@@ -58,13 +58,13 @@ function NavigationItems({ children }: { children?: ReactNode }) {
   )
 }
 
-function NavigationItem({
+export const NavigationItem = ({
   href,
   children,
 }: {
   href: string
   children: ReactNode
-}) {
+}) => {
   return (
     <ShadcnNavigationMenuItem>
       <NavigationMenuLink
@@ -77,12 +77,16 @@ function NavigationItem({
   )
 }
 
-function SignInButton({ children }: { children?: ReactNode }) {
+export const SignInButton = ({
+  children,
+  className,
+  size = 'sm',
+  ...props
+}: ComponentProps<typeof Button>) => {
   return (
-    <Button className="ml-auto" size="sm">
+    <Button className={cn('ml-auto', className)} size={size} {...props}>
       {children ?? 'Sign in'}
     </Button>
   )
 }
 
-export { Navigation, Logo, NavigationItems, NavigationItem, SignInButton }

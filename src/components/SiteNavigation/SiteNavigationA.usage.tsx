@@ -1,10 +1,10 @@
 import { SiteNavigationA } from '#/components/SiteNavigation/SiteNavigationA'
 
-export function SiteNavigationAExample() {
+export const SiteNavigationAUsage = () => {
   return (
     <SiteNavigationA
       showLogo
-      showSignInButton
+      signin={{ show: true, onclick: () => alert('Handle sign in') }}
       navigationItems={[
         { label: 'Home', href: '#' },
         { label: 'About', href: '#' },
