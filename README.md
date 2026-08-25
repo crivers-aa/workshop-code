@@ -30,3 +30,4 @@ Side-by-side comparison of two ways to build the same navigation bar.
 ## License
 
 MIT
+
