@@ -1,13 +1,17 @@
 import type { ReactNode } from 'react'
 
+import { cn } from '#/lib/utils'
+
 type BrowserWindowProps = {
   children: ReactNode
   url?: string
+  contentClassName?: string
 }
 
 export function BrowserWindow({
   children,
   url = 'example.com',
+  contentClassName,
 }: BrowserWindowProps) {
   return (
     <div className="overflow-hidden rounded-xl border bg-muted/30 shadow-sm">
@@ -24,7 +28,14 @@ export function BrowserWindow({
         </div>
         <div className="w-[52px]" aria-hidden="true" />
       </div>
-      <div className="aspect-video bg-background">{children}</div>
+      <div
+        className={cn(
+          'relative aspect-video overflow-hidden bg-background',
+          contentClassName,
+        )}
+      >
+        {children}
+      </div>
     </div>
   )
 }

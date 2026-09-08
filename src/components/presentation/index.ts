@@ -1,0 +1,8 @@
+export { Presentation } from './Presentation'
+export { TitleSlide } from './TitleSlide'
+export { BulletSlide } from './BulletSlide'
+export { FolderStructureSlide } from './FolderStructureSlide'
+export type { FolderNode } from './FolderStructureSlide'
+export { SplitSlide } from './SplitSlide'
+export { Slides, Slide } from './Slides'
+export { CodeBlock } from './CodeBlock'

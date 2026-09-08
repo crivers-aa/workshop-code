@@ -10,33 +10,53 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CompoundComponentsRouteImport } from './routes/compound-components'
+import { Route as ShadcnRouteImport } from './routes/shadcn'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CompoundComponentsRoute = CompoundComponentsRouteImport.update({
+  id: '/compound-components',
+  path: '/compound-components',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShadcnRoute = ShadcnRouteImport.update({
+  id: '/shadcn',
+  path: '/shadcn',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/compound-components': typeof CompoundComponentsRoute
+  '/shadcn': typeof ShadcnRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/compound-components': typeof CompoundComponentsRoute
+  '/shadcn': typeof ShadcnRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/compound-components': typeof CompoundComponentsRoute
+  '/shadcn': typeof ShadcnRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/compound-components' | '/shadcn'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/compound-components' | '/shadcn'
+  id: '__root__' | '/' | '/compound-components' | '/shadcn'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CompoundComponentsRoute: typeof CompoundComponentsRoute
+  ShadcnRoute: typeof ShadcnRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +68,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/compound-components': {
+      id: '/compound-components'
+      path: '/compound-components'
+      fullPath: '/compound-components'
+      preLoaderRoute: typeof CompoundComponentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shadcn': {
+      id: '/shadcn'
+      path: '/shadcn'
+      fullPath: '/shadcn'
+      preLoaderRoute: typeof ShadcnRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CompoundComponentsRoute: CompoundComponentsRoute,
+  ShadcnRoute: ShadcnRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
