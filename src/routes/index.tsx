@@ -15,6 +15,12 @@ const examples = [
     description: 'Owned UI primitives, composition, and CVA variants.',
     to: '/shadcn',
   },
+  {
+    badge: '3',
+    title: 'Processes Recap',
+    description: 'Jira spaces, git branches, commits, and how we release.',
+    to: '/processes-recap',
+  },
 ] as const
 
 function Home() {

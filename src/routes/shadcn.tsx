@@ -93,12 +93,12 @@ function ShadcnTalk() {
       >
         <TitleSlide
           title="shadcn/ui"
-          description="Copy-paste primitives you own. Accessible Radix pieces, Tailwind tokens, and CVA variants — composed in your repo, not wrapped as a black-box library."
+          description="Copy-paste primitives you own. Accessible Radix pieces, Tailwind tokens, and CVA variants - composed in your repo, not wrapped as a black-box library."
         />
         <BulletSlide
           title="What shadcn actually is"
           items={[
-            { icon: FiPackage, text: 'When you run the CLI, it copies the component source directly into your project — you own and can edit those files freely.' },
+            { icon: FiPackage, text: 'When you run the CLI, it copies the component source directly into your project - you own and can edit those files freely.' },
             { icon: RiAccessibilityLine, text: 'Under the hood, each component is built on a Radix UI primitive, which takes care of behavior and accessibility for you.' },
             { icon: SiTailwindcss, text: 'Styling is driven by Tailwind utility classes that reference your design tokens, so the components naturally follow your theme.' },
             { icon: TbVariableMinus, text: 'CVA (Class Variance Authority) wires up variants like intent and size, mapping them to the right class names without manual conditionals.' },

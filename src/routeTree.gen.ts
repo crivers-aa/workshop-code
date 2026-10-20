@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CompoundComponentsRouteImport } from './routes/compound-components'
+import { Route as ProcessesRecapRouteImport } from './routes/processes-recap'
 import { Route as ShadcnRouteImport } from './routes/shadcn'
 
 const IndexRoute = IndexRouteImport.update({
@@ -23,6 +24,11 @@ const CompoundComponentsRoute = CompoundComponentsRouteImport.update({
   path: '/compound-components',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProcessesRecapRoute = ProcessesRecapRouteImport.update({
+  id: '/processes-recap',
+  path: '/processes-recap',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ShadcnRoute = ShadcnRouteImport.update({
   id: '/shadcn',
   path: '/shadcn',
@@ -32,30 +38,34 @@ const ShadcnRoute = ShadcnRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/compound-components': typeof CompoundComponentsRoute
+  '/processes-recap': typeof ProcessesRecapRoute
   '/shadcn': typeof ShadcnRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/compound-components': typeof CompoundComponentsRoute
+  '/processes-recap': typeof ProcessesRecapRoute
   '/shadcn': typeof ShadcnRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/compound-components': typeof CompoundComponentsRoute
+  '/processes-recap': typeof ProcessesRecapRoute
   '/shadcn': typeof ShadcnRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/compound-components' | '/shadcn'
+  fullPaths: '/' | '/compound-components' | '/processes-recap' | '/shadcn'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/compound-components' | '/shadcn'
-  id: '__root__' | '/' | '/compound-components' | '/shadcn'
+  to: '/' | '/compound-components' | '/processes-recap' | '/shadcn'
+  id: '__root__' | '/' | '/compound-components' | '/processes-recap' | '/shadcn'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CompoundComponentsRoute: typeof CompoundComponentsRoute
+  ProcessesRecapRoute: typeof ProcessesRecapRoute
   ShadcnRoute: typeof ShadcnRoute
 }
 
@@ -75,6 +85,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CompoundComponentsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/processes-recap': {
+      id: '/processes-recap'
+      path: '/processes-recap'
+      fullPath: '/processes-recap'
+      preLoaderRoute: typeof ProcessesRecapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/shadcn': {
       id: '/shadcn'
       path: '/shadcn'
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CompoundComponentsRoute: CompoundComponentsRoute,
+  ProcessesRecapRoute: ProcessesRecapRoute,
   ShadcnRoute: ShadcnRoute,
 }
 export const routeTree = rootRouteImport

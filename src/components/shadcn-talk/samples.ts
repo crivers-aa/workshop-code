@@ -89,7 +89,7 @@ export const mockPageCode = `
 `
 
 export const compoundCode = `
-// Each piece is a real export — not a
+// Each piece is a real export - not a
 // config object. Compose what you need.
 
 Card                    // root surface

@@ -17,8 +17,8 @@ yarn dev
 
 Side-by-side comparison of two ways to build the same navigation bar.
 
-- **A — Props-based:** [SiteNavigationA.usage.tsx](src/components/SiteNavigation/SiteNavigationA.usage.tsx)
-- **B — Compound components:** [SiteNavigationB.usage.tsx](src/components/SiteNavigation/SiteNavigationB.usage.tsx)
+- **A - Props-based:** [SiteNavigationA.usage.tsx](src/components/SiteNavigation/SiteNavigationA.usage.tsx)
+- **B - Compound components:** [SiteNavigationB.usage.tsx](src/components/SiteNavigation/SiteNavigationB.usage.tsx)
 
 ---
 
